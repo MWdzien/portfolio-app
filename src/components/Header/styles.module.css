@@ -1,0 +1,52 @@
+.header {
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  top: 0;
+  padding: 35px;
+  justify-content: right;
+  width: 100%;
+  box-sizing: border-box;
+  align-content: center;
+}
+.header .nav {
+  display: flex;
+  align-items: center;
+}
+.header .nav .el {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1000;
+  padding: 15px;
+  cursor: pointer;
+}
+.header .nav .el:hover .indicator {
+  transform: scale(1);
+}
+.header .nav .el .indicator {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 45px;
+  left: 50%;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  transform: scale(0) translateX(-50%);
+  transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.header .nav a {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.header .nav .button {
+  transform: scale(0);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1000;
+  padding: 15px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.module.css.map */
