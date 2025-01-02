@@ -1,33 +1,57 @@
 .container {
   text-transform: uppercase;
-  display: flex;
+  //display: flex;
   align-items: center;
-  height: 100vh;
-  .names {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 50vh;
-    h1{
-      font-size: 6rem;
-      text-align: right;
+  height: 200vh;
+  .body{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    .names {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      align-items: center;
+      position: absolute;
+      .name{
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        padding: 10px;
+        z-index: 2;
+        span{
+
+          font-size: 8vw;
+        }
+      }
     }
+
+    .content{
+      position: absolute;
+      top: 0;
+      width: 100%;
+      min-height: 100vh;
+
+      .mainImage{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+
+        background-color: var(--background-color);
+        clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
+        transform: rotate(30deg);
+        img{
+          position: relative;
+          object-fit: cover;
+          width: 100vw;
+          height: 100vh;
+        }
+      }
+    }
+
   }
-  .buttons {
-    flex: 1;
-    display: flex;
-    margin-left: 1rem;
-    flex-direction: column;
-    justify-content: center;
-    height: 50vh;
-    button {
-      all: unset;
-      font-size: 3rem;
-    }
-    button:hover{
-      cursor: pointer;
-      color: var(--primary-shade);
-    }
-  }
+
+
 }

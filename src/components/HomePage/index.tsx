@@ -3,39 +3,78 @@ import {useLayoutEffect, useRef} from "react";
 import styles from './styles.module.scss'
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import mainImage from "../../../public/images/main.jpg"
 import Button from "../../common/Button"
+import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger);
 import Process from '../Process'
 import Images from '../Images'
 
+const firstName = "barbara";
+const lastName = "dmowska";
 
 const HomePage: React.FC = () => {
     const containerRef = useRef(null);
-    const nameRef = useRef(null);
+    const firstNameRef = useRef(null);
     const lastNameRef = useRef(null);
-    const lettersRef = useRef<(HTMLSpanElement | null)[]>([]);
+    const imageRef = useRef(null);
 
 
     useLayoutEffect(() => {
         const context = gsap.context(() => {
-            const timeline = gsap.timeline({
+
+            const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true,
+                    trigger: imageRef.current,
+                    start: "0.1% top",
+                    end: "bottom bottom",
+                    onEnter: () =>{
+                        gsap.set(imageRef.current, {position: 'relative', top: '195%'})
+                    },
+                    onLeaveBack: () =>{
+                        gsap.set(imageRef.current, {position: 'fixed', top: '0'})
+                    },
+                    //markers: true
                 }
-            });
-            timeline.to(nameRef.current, {y: "-100px"}, 0);
-            timeline.to(lastNameRef.current, {y: "-50px"}, 0);
-
-            const vals = ["-25px", "-40px", "-20px", "-50px", "-15px", "-35px", "-10px", "-20px", "-40px"];
-
-            lettersRef.current.forEach((letter, i) => {
-                gsap.set(letter, {position: "relative"})
-                timeline.to(letter, {top: vals[i]}, 0);
             })
+
+
+            tl.to(firstNameRef.current, {
+                x: () => -innerWidth * 3,
+                scale: 10,
+                ease: "power2.inOut",
+                scrollTrigger: {
+                    start: "top top",
+                    end: `+=200%`,
+                    scrub: 1,
+                    //markers: true
+                }
+            }, 0);
+
+            tl.to(lastNameRef.current, {
+                x: () => innerWidth * 3,
+                scale: 10,
+                ease: "power2.inOut",
+                scrollTrigger: {
+                    start: "top top",
+                    end: `+=200%`,
+                    scrub: 1,
+                    //markers: true
+                }
+            }, 0)
+
+            tl.to(imageRef.current, {
+                rotation: 0,
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                ease: "power1.inOut",
+                scrollTrigger: {
+                    start: "top top",
+                    end: "+=100%",
+                    scrub: 1
+                }
+            }, 0)
+
         })
 
         return () => context.revert();
@@ -43,26 +82,36 @@ const HomePage: React.FC = () => {
 
     return (
         <div ref={containerRef} className={styles.container}>
-            <div className={styles.names}>
-                <h1 ref={nameRef}>barbara</h1>
-                <h1 ref={lastNameRef}>dmowska</h1>
+            <div className={styles.body}>
+                <div className={styles.names}>
+                    <div ref={firstNameRef} className={styles.name}>
+                        {
+                            firstName.split("").map((letter, index) => {
+                                return <span key={index}>{letter}</span>
+                            })
+                        }
+                    </div>
+                    <div ref={lastNameRef} className={styles.name}>
+                        {
+                            lastName.split("").map((letter, index) => {
+                                return <span key={index}>{letter}</span>
+                            })
+                        }
+                    </div>
+
+                </div>
+                <div className={styles.content}>
+                    <div ref={imageRef} className={styles.mainImage}>
+                        <Image
+                            src={mainImage}
+                            alt="main"
+                            fill
+                        />
+                    </div>
+
+                </div>
             </div>
-            <div className={styles.buttons}>
-                <button>{
-                    "work".split("").map((letter, i) => <span
-                        key={`l_${i}`}
-                        ref={el => {lettersRef.current[i] = el}}>
-                        {letter}
-                    </span>)
-                }</button>
-                <button>{
-                    "about".split("").map((letter, i) => <span
-                        key={`l_${i}`}
-                        ref={el => {lettersRef.current[i+"work".length] = el}}>
-                        {letter}
-                    </span>)
-                }</button>
-            </div>
+
         </div>
     )
 }

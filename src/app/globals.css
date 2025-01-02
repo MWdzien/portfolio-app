@@ -12,10 +12,15 @@
 
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 body {
   color: var(--primary-color);
   background-color: var(--background-color);
   font-family: nightingale, serif;
+  height: 100%;
   margin: 0px;
   margin-bottom: 200vh;
 }
