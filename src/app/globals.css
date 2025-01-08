@@ -4,11 +4,12 @@
 }
 
 :root {
-  --primary-color: #420000;
+  --primary-color1: #420000;
+  --primary-color: black;
   --primary2-color: #69140E;
   --primary-shade: #240705;
-  --background-color: #FFFAED;
-  --background2-color: #FFFAED;
+  --background-color1: #FFFAED;
+  --background-color: #fff;
 
 }
 

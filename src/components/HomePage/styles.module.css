@@ -18,13 +18,14 @@
   position: absolute;
 }
 .container .body .names .name {
+  font-family: "Neue Montreal";
   font-weight: 400;
   letter-spacing: -0.02em;
   padding: 10px;
   z-index: 2;
 }
 .container .body .names .name span {
-  font-size: 8vw;
+  font-size: 9vw;
 }
 .container .body .content {
   position: absolute;

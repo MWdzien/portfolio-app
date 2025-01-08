@@ -12,7 +12,7 @@ import Image3 from "../../../public/images/3.png"
 import Image4 from "../../../public/images/4.png"
 import Image5 from "../../../public/images/5.png"
 
-const parallaxScrollVals = ["-100", "-150", "-200", "-250", "-300", "-25"]
+const parallaxScrollVals = ["-200", "-300", "-400", "-500", "-600", "-50"]
 
 const Images: React.FC = () => {
     const images = [Image1, Image2, Image3, Image4, Image5];
@@ -26,7 +26,7 @@ const Images: React.FC = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top bottom",
-                    end: "10000 bottom",
+                    end: "bottom top",
                     scrub: true,
                     //markers: true
                 }
@@ -43,6 +43,9 @@ const Images: React.FC = () => {
 
     return (
         <div ref={containerRef} className={styles.container}>
+            <div className={styles.text}>
+                <h1>selected works</h1>
+            </div>
             {
                 images.map((image, i) => {
                     return <div ref={el => {imagesRef.current[i] = el}} className={styles.imageContainer}>

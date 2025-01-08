@@ -1,7 +1,18 @@
 .container {
   position: relative;
-  height: 200vh;
+  height: 230vh;
   margin-top: 20vh;
+  display: flex;
+}
+.container .text {
+  text-transform: uppercase;
+  position: absolute;
+  font-size: 2rem;
+}
+.container .text:nth-of-type(1) {
+  top: 30vh;
+  left: 15vw;
+  z-index: 1;
 }
 .container .imageContainer {
   position: absolute;
@@ -9,31 +20,31 @@
 .container .imageContainer img {
   object-fit: cover;
 }
-.container .imageContainer:nth-of-type(1) {
-  top: 0vh;
-  transform: scale(1.5);
-  left: 55%;
-  z-index: 1;
-}
 .container .imageContainer:nth-of-type(2) {
   top: 10vh;
+  transform: scale(1.5);
+  left: 60vw;
+  z-index: 1;
+}
+.container .imageContainer:nth-of-type(3) {
+  top: 70vh;
   left: 5%;
   z-index: 2;
   transform: scale(1.1);
 }
-.container .imageContainer:nth-of-type(3) {
-  top: 90vh;
-  left: 20%;
+.container .imageContainer:nth-of-type(4) {
+  top: 150vh;
+  left: 20vw;
   z-index: 3;
 }
-.container .imageContainer:nth-of-type(4) {
-  top: 120vh;
+.container .imageContainer:nth-of-type(5) {
+  top: 180vh;
   left: 35vw;
   z-index: 4;
 }
-.container .imageContainer:nth-of-type(5) {
-  top: 150vh;
-  left: 60%;
+.container .imageContainer:nth-of-type(6) {
+  top: 210vh;
+  left: 60vw;
   z-index: 5;
 }
 
