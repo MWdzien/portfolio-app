@@ -27,7 +27,6 @@ const Process: React.FC = () => {
                     start: 'top top',
                     end: 'bottom +=35%',
                     scrub: 1,
-                    markers: true
                 }
             })
         })
