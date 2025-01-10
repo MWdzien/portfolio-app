@@ -13,7 +13,7 @@ const WorksNavigation: React.FC = () => {
             <div className={styles.body}>
                 {
                     categories.map((cat, index) => {
-                        return <WorkCategory image={Cat1} name={cat} />
+                        return <WorkCategory key={index} image={categoryImages[index]} name={cat} />
                     })
                 }
             </div>

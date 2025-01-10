@@ -7,7 +7,6 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 
 const Header: React.FC = () => {
-    const header = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const pathname = usePathname();
     const workButton = useRef(null);

@@ -4,12 +4,9 @@ import styles from './styles.module.scss'
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import mainImage from "../../../public/images/main.jpg"
-import Button from "../../common/Button"
 import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger);
-import Process from '../Process'
-import Images from '../Images'
 
 const firstName = "barbara";
 const lastName = "dmowska";

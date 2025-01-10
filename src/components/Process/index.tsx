@@ -2,19 +2,15 @@
 import React, {useLayoutEffect, useRef} from "react";
 import styles from './styles.module.scss'
 import gsap from 'gsap'
-import {motion, useSpring} from 'framer-motion'
 import Image from "next/image"
 
 import Image1 from '../../../public/images/image3_bw.png'
 import Image2 from '../../../public/images/image3_col.png'
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {useScroll, useTransform} from "framer-motion";
-import {linearGradient} from "framer-motion/m";
 gsap.registerPlugin(ScrollTrigger);
 
 
 const Process: React.FC = () => {
-    const container = useRef(null);
     const beforeRef = useRef(null);
     const afterRef = useRef(null);
     const bodyRef = useRef(null);

@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss"
 import React, {useRef} from "react";
 import {motion, useInView} from "framer-motion"
-import {slideUp, opacity} from "./anim"
+import {slideUp} from "./anim"
 
 const About: React.FC = () =>{
     const text = "blah blahblah zipzip zip zap zapzapzap meow moewwww moew moew? Meow moewww meoow yapyap yap yapyap yappp. blah blahblah zipzip zip zap zapzapzap meow moewwww moew moew. yap yapyap lahblah meow."

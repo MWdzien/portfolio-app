@@ -22,7 +22,7 @@ body {
   background-color: var(--background-color);
   font-family: nightingale, serif;
   height: 100%;
-  margin: 0px;
+  margin: 0;
 }
 
 * {

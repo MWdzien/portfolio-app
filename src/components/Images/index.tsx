@@ -48,7 +48,7 @@ const Images: React.FC = () => {
             </div>
             {
                 images.map((image, i) => {
-                    return <div ref={el => {imagesRef.current[i] = el}} className={styles.imageContainer}>
+                    return <div key={i} ref={el => {imagesRef.current[i] = el}} className={styles.imageContainer}>
                         <Image
                             src={image}
                             alt="work"

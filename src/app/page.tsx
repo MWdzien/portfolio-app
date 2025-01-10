@@ -9,7 +9,6 @@ import Images from "../components/Images"
 import About from "../components/About"
 import {AnimatePresence} from "framer-motion";
 import Lenis from "@studio-freight/lenis";
-import WorksNavigation from "@/components/WorksNavigation";
 import Footer from "@/components/Footer";
 
 export default function Home() {
