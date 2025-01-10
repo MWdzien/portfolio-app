@@ -27,9 +27,10 @@ const Process: React.FC = () => {
             gsap.to(afterRef.current, {
                 clipPath: 'inset(0% 0% 0% 0%)',
                 scrollTrigger: {
-                    start: '74% top',
-                    end: 'bottom bottom',
-                    scrub: 2,
+                    trigger: beforeRef.current,
+                    start: 'top top',
+                    end: 'bottom +=35%',
+                    scrub: 1,
                     markers: true
                 }
             })

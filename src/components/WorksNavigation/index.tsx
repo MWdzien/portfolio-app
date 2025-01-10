@@ -1,6 +1,8 @@
 import styles from "./styles.module.scss"
 import React from "react";
-import {Cat1, Cat2} from "../../../public/images"
+import Cat1 from "../../../public/images/clo_design.jpg"
+import Cat2 from "../../../public/images/clo_design.jpg"
+import WorkCategory from "@/components/WorkCategory";
 
 const WorksNavigation: React.FC = () => {
     const categories = ["drawings", "clothing design"];
@@ -10,9 +12,13 @@ const WorksNavigation: React.FC = () => {
         <div className={styles.container}>
             <div className={styles.body}>
                 {
-
+                    categories.map((cat, index) => {
+                        return <WorkCategory image={Cat1} name={cat} />
+                    })
                 }
             </div>
         </div>
     )
 }
+
+export default WorksNavigation;

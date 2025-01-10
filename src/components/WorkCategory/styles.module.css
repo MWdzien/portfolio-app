@@ -1,0 +1,17 @@
+.imageContainer {
+  position: relative;
+  height: 30vh;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.imageContainer img {
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=styles.module.css.map */

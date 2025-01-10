@@ -12,7 +12,7 @@ import Image3 from "../../../public/images/3.png"
 import Image4 from "../../../public/images/4.png"
 import Image5 from "../../../public/images/5.png"
 
-const parallaxScrollVals = ["-200", "-300", "-400", "-500", "-600", "-50"]
+const parallaxScrollVals = ["-200", "-150", "-400", "-500", "-600", "-50"]
 
 const Images: React.FC = () => {
     const images = [Image1, Image2, Image3, Image4, Image5];
@@ -52,6 +52,7 @@ const Images: React.FC = () => {
                         <Image
                             src={image}
                             alt="work"
+                            fill
                         />
                     </div>
                 })

@@ -1,0 +1,15 @@
+.container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  .body{
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: start;
+  }
+}
